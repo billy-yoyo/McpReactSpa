@@ -1,0 +1,21 @@
+{
+  "name": "react-mcp-spa",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "pnpm@9.11.0",
+  "scripts": {
+    "dev:ui": "pnpm --filter @react-mcp-spa/ui dev",
+    "dev:playground": "pnpm --filter @react-mcp-spa/playground dev",
+    "build:ui": "pnpm --filter @react-mcp-spa/ui build",
+    "build:mcp": "pnpm --filter @react-mcp-spa/mcp build",
+    "serve:mcp": "pnpm --filter @react-mcp-spa/mcp serve",
+    "build": "pnpm run build:ui && pnpm run build:mcp",
+    "start": "pnpm run build && pnpm run serve:mcp",
+    "tunnel": "cloudflared tunnel --url http://localhost:3001",
+    "pack:mcpb": "node scripts/pack-mcpb.mjs"
+  },
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "^1.0.0"
+  }
+}

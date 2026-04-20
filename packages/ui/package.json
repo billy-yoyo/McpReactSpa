@@ -1,0 +1,34 @@
+{
+  "name": "@react-mcp-spa/ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./global.css": "./src/global.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "cross-env INPUT=index.html vite build",
+    "watch": "cross-env INPUT=index.html vite build --watch",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "cross-env": "^10.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.0",
+    "vite-plugin-singlefile": "^2.3.0"
+  }
+}

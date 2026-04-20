@@ -1,0 +1,60 @@
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#ffffff, #1a1a1a);
+  --fg: light-dark(#1f2937, #f3f4f6);
+  --muted: light-dark(#6b7280, #9ca3af);
+  --accent: light-dark(#2563eb, #60a5fa);
+  --border: light-dark(#e5e7eb, #374151);
+  --font: ui-sans-serif, system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+h1 { margin-top: 0; }
+
+code, pre { font-family: var(--mono); }
+
+.badge {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.muted { color: var(--muted); }

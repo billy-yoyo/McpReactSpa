@@ -1,0 +1,29 @@
+{
+  "manifest_version": "0.3",
+  "name": "react-mcp-spa",
+  "display_name": "React MCP SPA",
+  "version": "0.0.0",
+  "description": "Minimal MCP server that serves a React SPA (single HTML blob) via MCP Apps, with per-tool routing.",
+  "author": {
+    "name": "William Page"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "server/main.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/main.js", "--stdio"]
+    }
+  },
+  "tools": [
+    { "name": "show-home", "description": "Render the home page of the SPA." },
+    { "name": "show-counter", "description": "Render the counter page, seeded with a starting value." },
+    { "name": "show-profile", "description": "Render the profile page." }
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=20.0.0"
+    }
+  }
+}

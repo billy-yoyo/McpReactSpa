@@ -1,0 +1,167 @@
+.playground {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.playground-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.playground-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.playground-title-row h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.preset-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.preset-row button {
+  padding: 0.25rem 0.625rem;
+  font-size: 0.8rem;
+  border-radius: 9999px;
+}
+
+.playground-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .playground-inputs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.json-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.json-input-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.json-input-hint {
+  font-size: 0.75rem;
+}
+
+.json-input textarea {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--fg);
+  resize: vertical;
+  min-height: 140px;
+}
+
+.json-input textarea.has-error {
+  border-color: #dc2626;
+}
+
+.json-input-error {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: #dc2626;
+}
+
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  max-width: 90%;
+}
+
+.bubble-role {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.bubble-body {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.875rem 1rem;
+  background: var(--bg);
+}
+
+.bubble-user {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.bubble-user .bubble-body {
+  background: var(--accent);
+  color: white;
+  border-color: transparent;
+}
+
+.bubble-user .bubble-body p {
+  margin: 0;
+}
+
+.bubble-user .bubble-body code {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.bubble-assistant {
+  align-self: flex-start;
+  width: 100%;
+}
+
+.tool-output {
+  margin-top: 0.5rem;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  background: light-dark(#f9fafb, #111827);
+}
+
+.tool-output > div > h1 {
+  font-size: 1.25rem;
+}
+
+.error-card {
+  border-color: #dc2626;
+}
