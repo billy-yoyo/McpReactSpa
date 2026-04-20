@@ -6,6 +6,7 @@ A minimal React single-page app that is bundled into one HTML blob and served by
 
 - [packages/ui/](packages/ui/) — React + Vite SPA, built to a single-file HTML blob via `vite-plugin-singlefile`.
 - [packages/mcp/](packages/mcp/) — MCP server using `@modelcontextprotocol/ext-apps/server`. Registers tools (`show-home`, `show-counter`, `show-profile`) that all point to the same `ui://` resource.
+- [packages/playground/](packages/playground/) — dev-only harness that renders the SPA inside a mock chat UI with JSON inputs for `hostContext` and `toolResult`, so pages can be exercised without an MCP host.
 
 ## Install
 
@@ -22,6 +23,14 @@ pnpm run dev:ui
 ```
 
 Open the printed URL (e.g. `http://localhost:5173`). The SPA detects that there's no MCP host and shows a route picker so you can preview each page.
+
+## Playground — test rendering without MCP
+
+```sh
+pnpm run dev:playground
+```
+
+Opens on `http://localhost:5174`. The playground reuses the SPA's real route renderer (`RouteRenderer` from [packages/ui/src/Router.tsx](packages/ui/src/Router.tsx)) and wraps it in a mock chat UI. The header has two JSON textareas — one for the `hostContext` (drives which page renders via `toolInfo.tool.name`) and one for the `toolResult` passed to the page. Preset buttons load ready-made context+result pairs for each registered tool; edits to either textarea re-render the assistant's tool-output bubble live.
 
 ## Build and run the MCP server
 
